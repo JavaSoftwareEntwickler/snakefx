@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<Pane fx:id="root" prefHeight="400.0" prefWidth="300.0" fx:controller="com.example.snakefx.SnakeController" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+
+    <children>
+        <Text fx:id="scoreText" layoutX="10.0" layoutY="20.0" text="Punteggio: 0" />
+        <Text fx:id="classificaText" layoutX="10.0" layoutY="40.0" text="" visible="false" />
+        <Button fx:id="restartButton" layoutX="75.0" layoutY="200.0" text="Rigioca" visible="false" />
+    </children>
+</Pane>
+
+
+
