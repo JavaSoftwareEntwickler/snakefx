@@ -12,6 +12,7 @@ module com.example.snakefx {
     requires com.almasb.fxgl.all;
     requires java.sql;
     requires javafx.media;
+    requires jlayer;
 
     opens com.example.snakefx to javafx.fxml;
     exports com.example.snakefx;

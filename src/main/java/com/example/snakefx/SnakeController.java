@@ -13,7 +13,10 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
+import javazoom.jl.player.Player;
 
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
 import java.nio.file.Paths;
 import java.util.LinkedList;
 import java.util.Optional;
@@ -186,9 +189,16 @@ public class SnakeController {
 
     private void playSound(String filePath) {
         try {
-            Media sound = new Media(Paths.get(filePath).toUri().toString());
-            MediaPlayer mediaPlayer = new MediaPlayer(sound);
-            mediaPlayer.setAutoPlay(true);
+            FileInputStream fis = new FileInputStream(filePath);
+            BufferedInputStream bis = new BufferedInputStream(fis);
+            Player player = new Player(bis);
+            new Thread(() -> {
+                try {
+                    player.play();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }).start();
         } catch (Exception e) {
             e.printStackTrace();
         }
